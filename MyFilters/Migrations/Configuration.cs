@@ -110,12 +110,14 @@ namespace MyFilters.Migrations
             Filter[] filters =
             {
                 new Filter { FilterNameId = 1, FilterValueId = 4, ProductId = 1 }, //Asus
-                new Filter { FilterNameId = 1, FilterValueId = 3, ProductId = 3 }, //Hp - 1
-                new Filter { FilterNameId = 1, FilterValueId = 3, ProductId = 4 }, //Hp - 2
+                new Filter { FilterNameId = 1, FilterValueId = 3, ProductId = 3 }, //Hp - 1        
                 new Filter { FilterNameId = 2, FilterValueId = 8, ProductId = 1 }, //Asus - SSD 128GB
-                new Filter { FilterNameId = 2, FilterValueId = 9, ProductId = 4 }, //Hp - 2 SSD 256GB
                 new Filter { FilterNameId = 1, FilterValueId = 7, ProductId = 2 }, //DELL
-                new Filter { FilterNameId = 2, FilterValueId = 10, ProductId = 2 } //DELL SSD 512
+                new Filter { FilterNameId = 2, FilterValueId = 10, ProductId = 2 }, //DELL SSD 512
+
+                new Filter { FilterNameId = 2, FilterValueId = 10, ProductId = 4 }, //HP SSD 512
+                new Filter { FilterNameId = 2, FilterValueId = 9, ProductId = 4 }, //Hp - 2 SSD 256GB
+                new Filter { FilterNameId = 1, FilterValueId = 3, ProductId = 4 }, //Hp - 2
             };
             context.Filters.AddOrUpdate(x => new { x.FilterNameId, x.FilterValueId, x.ProductId }, filters);
             #endregion

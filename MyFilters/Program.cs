@@ -13,18 +13,37 @@ namespace MyFilters
         {
             using (EFContext context = new EFContext())
             {
-                int[] filters = { 5, 6, 3, 4 };
+                Console.WriteLine("dsfsd");
+                int[] filters = { 3, 10 };
 
-                
-                Filter f = new Filter { FilterValueId = 3 };
-
-                foreach (var a in context.Filters)
+                List<Product> FiltringProducts = new List<Product>();
+                foreach (int id in filters)
                 {
-                    if (a.FilterValueId == f.FilterValueId)
+                    foreach (Filter filter in context.Filters)
                     {
-                        Console.WriteLine(a.FilterNameOf.Name + " : " + a.FilterValueOf.Name + "   Ноутбук: " + a.ProductOf.Name);
+                        if (id == filter.FilterValueId)
+                        {
+                            FiltringProducts.Add(filter.ProductOf);
+                        }
                     }
                 }
+
+                var result = FiltringProducts.Where(FindingObjects => (FiltringProducts.Count(obj => obj == FindingObjects)) == filters.Count()).Distinct();
+                foreach (Product pr in result)
+                {
+                    Console.WriteLine(pr.Name);
+                }
+
+                
+
+                //.FirstOrDefault().Key
+
+                // Console.WriteLine(a.Count());
+
+                //foreach (Product a in FiltringProducts)
+                //{
+                //    Console.WriteLine(a.Name);
+                //}
 
             }
         }
