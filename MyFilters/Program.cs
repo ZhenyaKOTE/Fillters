@@ -13,8 +13,8 @@ namespace MyFilters
         {
             using (EFContext context = new EFContext())
             {
-                Console.WriteLine("dsfsd");
-                int[] filters = { 3, 10 };
+                //Console.WriteLine("dsfsd");
+                int[] filters = { 3, 9 };
 
                 List<Product> FiltringProducts = new List<Product>();
                 foreach (int id in filters)
@@ -34,16 +34,6 @@ namespace MyFilters
                     Console.WriteLine(pr.Name);
                 }
 
-                
-
-                //.FirstOrDefault().Key
-
-                // Console.WriteLine(a.Count());
-
-                //foreach (Product a in FiltringProducts)
-                //{
-                //    Console.WriteLine(a.Name);
-                //}
 
             }
         }
